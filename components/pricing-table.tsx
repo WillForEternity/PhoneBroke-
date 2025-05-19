@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Check, Info, ChevronRight, Clock, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -417,6 +417,9 @@ const pricingData = {
 
 export default function PricingTable({ initialTab }: { initialTab?: string }) {
   const [activeTab, setActiveTab] = useState(initialTab ?? "iphone")
+  useEffect(() => {
+    if (initialTab) setActiveTab(initialTab)
+  }, [initialTab])
 
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })

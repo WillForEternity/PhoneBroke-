@@ -11,17 +11,28 @@ export default function Hero({ onSelectDevice }: { onSelectDevice?: (device: str
   const [selectedDevice, setSelectedDevice] = useState<string>("iphone")
   const [selectOpen, setSelectOpen] = useState(false)
 
+  const scrollToPricing = () => {
+    const pricingEl = document.getElementById("pricing")
+    if (pricingEl) pricingEl.scrollIntoView({ behavior: "smooth" })
+  }
+
   const scrollToContact = () => {
-    if (onSelectDevice) onSelectDevice(selectedDevice)
-    const element = document.getElementById("pricing")
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
+    const contactEl = document.getElementById("contact")
+    if (contactEl) contactEl.scrollIntoView({ behavior: "smooth" })
+  }
+
+  const handleEstimate = () => {
+    if (selectedDevice === "other") {
+      scrollToContact()
+    } else {
+      onSelectDevice?.(selectedDevice)
+      scrollToPricing()
     }
   }
 
   return (
-    <section className="relative py-16 md:py-24 bg-black border-b border-slate-800 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+    <section className="relative h-[calc(100vh-80px)] md:h-[calc(100vh-96px)] bg-black overflow-hidden">
+      <div className="container mx-auto h-full px-4 md:px-6 flex items-center justify-center relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div>
@@ -41,7 +52,11 @@ export default function Hero({ onSelectDevice }: { onSelectDevice?: (device: str
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Select defaultValue={selectedDevice} onValueChange={(value) => setSelectedDevice(value)} onOpenChange={setSelectOpen}>
+              <Select
+                defaultValue={selectedDevice}
+                onValueChange={setSelectedDevice}
+                onOpenChange={setSelectOpen}
+              >
                 <SelectTrigger className="w-full sm:w-[280px]" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                   <SelectValue placeholder="Select Your Device Type" />
                 </SelectTrigger>
@@ -56,7 +71,7 @@ export default function Hero({ onSelectDevice }: { onSelectDevice?: (device: str
             </div>
 
             <Button
-              onClick={scrollToContact}
+              onClick={handleEstimate}
               size="lg"
               className="w-full sm:w-auto bg-cyan-700 hover:bg-cyan-800 text-white"
               onMouseEnter={() => setHovered(true)}
