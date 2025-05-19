@@ -52,7 +52,7 @@ export default function Navbar() {
     >
       <div className="container flex h-20 md:h-24 items-center justify-between">
         <div className="flex items-center gap-3">
-          <img src="/images/Logo.png" alt="Logo" className="h-16 md:h-20 w-auto mix-blend-lighten" />
+          <img src="/images/logo.png" alt="Logo" className="h-16 md:h-20 w-auto mix-blend-lighten" />
           <span className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">JW Phone Repair</span>
         </div>
 
@@ -87,7 +87,7 @@ export default function Navbar() {
             <div className="flex flex-col gap-8 py-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <img src="/images/Logo.png" alt="Logo" className="h-16 md:h-20 w-auto mix-blend-lighten" />
+                  <img src="/images/logo.png" alt="Logo" className="h-16 md:h-20 w-auto mix-blend-lighten" />
                   <span className="text-2xl font-bold text-gray-900 dark:text-white">JW Phone Repair</span>
                 </div>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)} className="rounded-md">

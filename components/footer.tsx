@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <img src="/images/Logo.png" alt="Logo" className="h-16 md:h-20 w-auto mix-blend-lighten" />
+              <img src="/images/logo.png" alt="Logo" className="h-16 md:h-20 w-auto mix-blend-lighten" />
               <span className="text-xl font-bold text-white">JW Phone Repair</span>
             </div>
             <p className="text-gray-400">
@@ -135,7 +135,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between space-y-4 border-t border-gray-800 pt-8 md:flex-row md:space-y-0">
-          <p className="text-center text-sm text-gray-400 md:text-left">© 2025 JW Phone Repair. All Rights Reserved.</p>
+          <p className="text-center text-sm text-gray-400 md:text-left"> 2025 JW Phone Repair. All Rights Reserved.</p>
           <div className="flex space-x-6">
             <Link href="#" className="text-sm text-gray-400 transition-colors hover:text-blue-400">
               Privacy Policy
