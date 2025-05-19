@@ -112,7 +112,7 @@ export default function ModernDeviceCharacter() {
         style={{ filter: "drop-shadow(0 10px 15px rgba(34, 211, 238, 0.25))" }} // cyan-400 with 25% opacity
       >
         {/* Device body - updated to cyan gradient */}
-        <div className="w-[180px] h-[360px] bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-[30px] relative overflow-hidden">
+        <div className="w-[180px] h-[360px] bg-gradient-to-b from-cyan-400 to-blue-500 rounded-[30px] relative overflow-hidden">
           {/* Screen area - updated to black for deep contrast, like logo's inner dark area */}
           <div className="absolute top-0 left-0 right-0 bottom-0 m-[8px] rounded-[24px] bg-black overflow-hidden">
             {/* Camera notch - adjusted for new scheme */}

@@ -24,17 +24,17 @@ export default function Hero() {
           <div className="space-y-6">
             <div>
               <h1 className="relative text-4xl md:text-5xl font-bold tracking-tight text-white">
-                <span className={`block transition-opacity duration-300 ${(hovered || selectOpen) ? 'opacity-0' : 'opacity-100'}`}>
+                <span className={`inline-block whitespace-nowrap transition-opacity duration-300 ${(hovered || selectOpen) ? 'opacity-0' : 'opacity-100'}`}>
                   <span className="glitch" data-text="Phone">Phone</span>{' '}
-                  <span className="glitch" data-text="Broke?">Broke?</span>
+                  <span className="glitch" data-text="Broken?">Broken?</span>
                 </span>
-                <span className={`absolute top-0 left-0 flex items-center space-x-2 transition-all duration-300 ease-in-out ${(hovered || selectOpen) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}>
-                  <span className="text-8xl md:text-10xl font-bold tracking-tight bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">JW Got You.</span>
+                <span className={`absolute top-0 left-0 flex items-center space-x-2 whitespace-nowrap transition-all duration-300 ease-in-out ${(hovered || selectOpen) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}>
+                  <span className="text-8xl md:text-10xl font-bold tracking-tight bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">JW's Got You.</span>
                   <span className="text-8xl md:text-10xl bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">✔︎</span>
                 </span>
               </h1>
               <p className="mt-4 text-lg text-gray-300">
-                Get your iPhone, Samsung, tablet, or gaming console fixed quickly by our certified technicians.
+                Get your smartphone, tablet, or computer fixed quickly by our technicians.
               </p>
             </div>
 
