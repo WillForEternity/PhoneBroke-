@@ -164,7 +164,7 @@ export default function Contact() {
                 />
               </div>
 
-              <Button type="submit" className="w-full bg-orange-500 hover:bg-orange-600 text-white">
+              <Button type="submit" className="w-full bg-cyan-700 hover:bg-cyan-800 text-white">
                 <span className="mr-2">Submit for Quote</span>
                 <ArrowRight className="h-5 w-5" />
               </Button>

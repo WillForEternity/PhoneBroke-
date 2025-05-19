@@ -1,11 +1,15 @@
 "use client"
 
+import { useState } from "react"
 import { ShieldCheck, Clock, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import ModernDeviceCharacter from "@/components/modern-device-character"
 
 export default function Hero() {
+  const [hovered, setHovered] = useState(false)
+  const [selectOpen, setSelectOpen] = useState(false)
+
   const scrollToContact = () => {
     const element = document.getElementById("contact")
     if (element) {
@@ -14,23 +18,20 @@ export default function Hero() {
   }
 
   return (
-    <section className="relative py-16 md:py-24 bg-slate-900 border-b border-slate-800 overflow-hidden">
-      {/* Background with subtle overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/hero-background.jpg"
-          alt="Technology background"
-          className="w-full h-full object-cover opacity-20"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/95 to-slate-900/90"></div>
-      </div>
-
+    <section className="relative py-16 md:py-24 bg-black border-b border-slate-800 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white">
-                Expert Device Repair Services
+              <h1 className="relative text-4xl md:text-5xl font-bold tracking-tight text-white">
+                <span className={`block transition-opacity duration-300 ${(hovered || selectOpen) ? 'opacity-0' : 'opacity-100'}`}>
+                  <span className="glitch" data-text="Phone">Phone</span>{' '}
+                  <span className="glitch" data-text="Broke?">Broke?</span>
+                </span>
+                <span className={`absolute top-0 left-0 flex items-center space-x-2 transition-all duration-300 ease-in-out ${(hovered || selectOpen) ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-full'}`}>
+                  <span className="text-8xl md:text-10xl font-bold tracking-tight bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">JW Got You.</span>
+                  <span className="text-8xl md:text-10xl bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent">✔︎</span>
+                </span>
               </h1>
               <p className="mt-4 text-lg text-gray-300">
                 Get your iPhone, Samsung, tablet, or gaming console fixed quickly by our certified technicians.
@@ -38,8 +39,8 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Select className="w-full sm:w-[280px]">
-                <SelectTrigger>
+              <Select onOpenChange={setSelectOpen}>
+                <SelectTrigger className="w-full sm:w-[280px]" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                   <SelectValue placeholder="Select Your Device Type" />
                 </SelectTrigger>
                 <SelectContent>
@@ -55,7 +56,9 @@ export default function Hero() {
             <Button
               onClick={scrollToContact}
               size="lg"
-              className="w-full sm:w-auto bg-orange-500 hover:bg-orange-600 text-white"
+              className="w-full sm:w-auto bg-cyan-700 hover:bg-cyan-800 text-white"
+              onMouseEnter={() => setHovered(true)}
+              onMouseLeave={() => setHovered(false)}
             >
               Get a Free Estimate
             </Button>

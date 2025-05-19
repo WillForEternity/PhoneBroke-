@@ -256,7 +256,7 @@ export default function Services() {
             <Card
               key={index}
               className={`border border-gray-800 bg-slate-800 transition-all duration-200 hover:shadow-md ${
-                expandedService === index ? "col-span-full" : ""
+                expandedService === index ? "col-span-full row-start-1" : ""
               }`}
             >
               <CardHeader className="pb-2">
@@ -271,14 +271,6 @@ export default function Services() {
                 {expandedService === index ? (
                   <div className="mt-6 animate-fadeIn">
                     <p className="text-gray-300 mb-4">{service.detailedDescription}</p>
-
-                    <div className="relative w-full h-48 md:h-64 rounded-md overflow-hidden my-6">
-                      <img
-                        src={service.image || "/placeholder.svg"}
-                        alt={`${service.title} service`}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                       <div>
@@ -382,7 +374,7 @@ export default function Services() {
                     )}
 
                     <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                      <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
+                      <Button onClick={scrollToContact} className="bg-cyan-700 hover:bg-cyan-800 text-white">
                         <span className="mr-2">Get a Quote</span>
                         <ChevronRight className="h-4 w-4" />
                       </Button>
@@ -396,28 +388,18 @@ export default function Services() {
                       </Button>
                     </div>
                   </div>
-                ) : (
-                  <>
-                    <div className="relative w-full h-32 rounded-md overflow-hidden my-4">
-                      <img
-                        src={service.image || "/placeholder.svg"}
-                        alt={`${service.title} service`}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
-                    <Button
-                      variant="ghost"
-                      onClick={() => toggleService(index)}
-                      className="mt-2 p-0 text-blue-400 hover:bg-transparent hover:text-blue-300 group"
-                    >
-                      <span className="mr-1">View Details</span>
-                      <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:translate-y-1" />
-                    </Button>
-                  </>
-                )}
+                ) : null}
               </CardContent>
               {expandedService !== index && (
-                <CardFooter>
+                <CardFooter className="flex justify-between space-x-4">
+                  <Button
+                    variant="ghost"
+                    onClick={() => toggleService(index)}
+                    className="p-0 text-blue-400 hover:bg-transparent hover:text-blue-300 group"
+                  >
+                    <span className="mr-1">View Details</span>
+                    <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover:rotate-180" />
+                  </Button>
                   <Button
                     variant="ghost"
                     className="p-0 text-blue-400 hover:bg-transparent hover:text-blue-300 group"

@@ -542,7 +542,7 @@ export default function PricingTable() {
                   </div>
 
                   <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
-                    <Button onClick={scrollToContact} className="bg-orange-500 hover:bg-orange-600 text-white">
+                    <Button onClick={scrollToContact} className="bg-cyan-700 hover:bg-cyan-800 text-white">
                       <span className="mr-2">Get a Custom Quote</span>
                       <ChevronRight className="h-4 w-4" />
                     </Button>

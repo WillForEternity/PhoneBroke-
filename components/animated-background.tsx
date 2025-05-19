@@ -98,10 +98,10 @@ export function AnimatedBackground() {
         }}
       />
 
-      {/* Primary orange wave - simplified animation */}
+      {/* Primary cyan wave - simplified animation */}
       <motion.div
         className={`absolute h-[70vh] w-[200vw] rounded-[100%] opacity-15 blur-3xl transition-colors duration-700 ${
-          isDark ? "bg-orange-600" : "bg-orange-500"
+          isDark ? "bg-cyan-700" : "bg-cyan-600"
         }`}
         style={{
           bottom: `calc(10%)`,
@@ -119,10 +119,10 @@ export function AnimatedBackground() {
         }}
       />
 
-      {/* Secondary orange wave - simplified animation */}
+      {/* Secondary cyan wave - simplified animation */}
       <motion.div
         className={`absolute h-[40vh] w-[150vw] rounded-[100%] opacity-10 blur-3xl transition-colors duration-700 ${
-          isDark ? "bg-orange-700" : "bg-orange-400"
+          isDark ? "bg-cyan-800" : "bg-cyan-500"
         }`}
         style={{
           bottom: `calc(25% + ${parallaxY}px)`,
