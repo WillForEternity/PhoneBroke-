@@ -6,12 +6,14 @@ import { Button } from "@/components/ui/button"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import ModernDeviceCharacter from "@/components/modern-device-character"
 
-export default function Hero() {
+export default function Hero({ onSelectDevice }: { onSelectDevice?: (device: string) => void }) {
   const [hovered, setHovered] = useState(false)
+  const [selectedDevice, setSelectedDevice] = useState<string>("iphone")
   const [selectOpen, setSelectOpen] = useState(false)
 
   const scrollToContact = () => {
-    const element = document.getElementById("contact")
+    if (onSelectDevice) onSelectDevice(selectedDevice)
+    const element = document.getElementById("pricing")
     if (element) {
       element.scrollIntoView({ behavior: "smooth" })
     }
@@ -39,7 +41,7 @@ export default function Hero() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Select onOpenChange={setSelectOpen}>
+              <Select defaultValue={selectedDevice} onValueChange={(value) => setSelectedDevice(value)} onOpenChange={setSelectOpen}>
                 <SelectTrigger className="w-full sm:w-[280px]" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}>
                   <SelectValue placeholder="Select Your Device Type" />
                 </SelectTrigger>

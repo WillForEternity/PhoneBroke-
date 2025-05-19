@@ -415,8 +415,8 @@ const pricingData = {
   },
 }
 
-export default function PricingTable() {
-  const [activeTab, setActiveTab] = useState("iphone")
+export default function PricingTable({ initialTab }: { initialTab?: string }) {
+  const [activeTab, setActiveTab] = useState(initialTab ?? "iphone")
 
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
@@ -436,7 +436,7 @@ export default function PricingTable() {
         </div>
 
         <div className="bg-slate-800 rounded-lg border border-slate-700 overflow-hidden">
-          <Tabs defaultValue="iphone" value={activeTab} onValueChange={setActiveTab} className="w-full">
+          <Tabs defaultValue={initialTab ?? "iphone"} value={activeTab} onValueChange={setActiveTab} className="w-full">
             <div className="border-b border-slate-700">
               <TabsList className="flex h-auto p-0 bg-transparent">
                 <TabsTrigger

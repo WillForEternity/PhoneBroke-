@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
 import Services from "@/components/services"
@@ -12,6 +12,8 @@ import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 
 export default function HomePage() {
+  const [initialTab, setInitialTab] = useState<string>("iphone")
+
   // Add smooth scrolling behavior
   useEffect(() => {
     document.documentElement.style.scrollBehavior = "smooth"
@@ -24,11 +26,11 @@ export default function HomePage() {
     <div className="min-h-screen font-sans bg-slate-900 transition-colors duration-300">
       <Navbar />
       <main>
-        <Hero />
+        <Hero onSelectDevice={setInitialTab} />
         <Services />
         <Process />
         <Features />
-        <PricingTable />
+        <PricingTable initialTab={initialTab} />
         <Testimonials />
         <Contact />
       </main>

@@ -10,9 +10,7 @@ export default function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-blue-600 text-white">
-                <Smartphone className="h-4 w-4" />
-              </div>
+              <img src="/images/Logo.png" alt="Logo" className="h-16 md:h-20 w-auto mix-blend-lighten" />
               <span className="text-xl font-bold text-white">JW Phone Repair</span>
             </div>
             <p className="text-gray-400">
